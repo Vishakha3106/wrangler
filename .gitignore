@@ -51,3 +51,7 @@ release.properties
 
 # Remove dev directory.
 dev
+
+.idea/
+*.iml
+

@@ -49,6 +49,34 @@
       <artifactId>gson</artifactId>
       <version>2.10.1</version>
     </dependency>
-
   </dependencies>
+
+  <build>
+    <plugins>
+      <!-- Apache RAT Plugin for license check -->
+      <plugin>
+        <groupId>org.apache.rat</groupId>
+        <artifactId>apache-rat-plugin</artifactId>
+        <version>0.10</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>check</goal>
+            </goals>
+            <configuration>
+              <excludes>
+                <!-- Exclude .iml files from RAT check -->
+                <exclude>**/*.iml</exclude>
+                <!-- You can add other exclusions if needed -->
+                <exclude>**/*.md</exclude>  <!-- Example: Exclude markdown files -->
+                <exclude>**/*.json</exclude> <!-- Example: Exclude JSON files -->
+                <exclude>**/generated/**</exclude> <!-- Exclude generated files -->
+              </excludes>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
 </project>
